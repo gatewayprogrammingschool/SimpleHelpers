@@ -1,0 +1,13 @@
+type project
+licenseUrl https://github.com/gatewayprogrammingschool/SimpleHelpers/blob/master/LICENSE
+projectUrl http://simplehelpers.gatewayprogramming.school/
+iconUrl http://gatewayprogramming.school/gps.png
+owners Gateway Programming School, Inc.
+authors The Sharp Ninja
+copyright Copyright 2017 (c) Gateway Programming School, Inc.
+summary 
+  Simple Helpers is a library that provides functionality for utilizing the stopwatch,
+  calling methods/delegates safely without worrying about exception handling,
+  and getting and setting data with complex constructs.
+tags timer stopwatch getter setter marshalling exception-handling
+include-pdbs true
