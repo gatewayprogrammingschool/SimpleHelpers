@@ -1,7 +1,0 @@
-FRAMEWORK: >= NET452
-NUGET
-  remote: https://api.nuget.org/v3/index.json
-    MSTest.TestAdapter (1.1.11)
-    MSTest.TestFramework (1.1.11)
-    Paket (5.85.1)
-    Paket.PowerShell (4.8.8)

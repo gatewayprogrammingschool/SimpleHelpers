@@ -26,7 +26,7 @@ function Deploy-Package
 
 		$releaseNotes = [IO.File]::ReadAllText($SolutionDir + "\ReleaseNotes.txt")
 
-		packages\Paket\tools\paket.exe pack --release-notes $releaseNotes --symbols -v $package
+		#packages\Paket\tools\paket.exe pack --release-notes $releaseNotes --symbols -v $package
 		#Paket-Push -File $destination -ApiKey $env:NugetAPIKey -url https://www.nuget.org -endpoint /api/v2/package -Verbose
 	}
 }

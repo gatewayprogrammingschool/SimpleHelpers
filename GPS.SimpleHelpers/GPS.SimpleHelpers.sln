@@ -3,20 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{057A3840-FE8A-480F-B592-98C354C55A1E}"
-	ProjectSection(SolutionItems) = preProject
-		paket.dependencies = paket.dependencies
-	EndProjectSection
-EndProject
+paket.dependencies = paket.dependencies
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPS.SimpleHelpers", "GPS.SimpleHelpers\GPS.SimpleHelpers.csproj", "{35EE4C3E-AD2D-4078-8408-632720FD7BDA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPS.SimpleHelpersTests", "GPS.SimpleHelpersTests\GPS.SimpleHelpersTests.csproj", "{72D19AD5-48D9-4A45-B9F1-4DE58BAD3ECA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3EA397B9-4E4A-461A-BBD8-59E92558F957}"
 	ProjectSection(SolutionItems) = preProject
 		Deploy.ps1 = Deploy.ps1
 		ReleaseNotes.txt = ReleaseNotes.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPS.SimpleHelpers.Tests", "GPS.SimpleHelpers.Tests\GPS.SimpleHelpers.Tests.csproj", "{09EE10F5-91A5-4C34-8FFE-C073B7EFD5F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +24,10 @@ Global
 		{35EE4C3E-AD2D-4078-8408-632720FD7BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35EE4C3E-AD2D-4078-8408-632720FD7BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35EE4C3E-AD2D-4078-8408-632720FD7BDA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72D19AD5-48D9-4A45-B9F1-4DE58BAD3ECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72D19AD5-48D9-4A45-B9F1-4DE58BAD3ECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72D19AD5-48D9-4A45-B9F1-4DE58BAD3ECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72D19AD5-48D9-4A45-B9F1-4DE58BAD3ECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09EE10F5-91A5-4C34-8FFE-C073B7EFD5F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09EE10F5-91A5-4C34-8FFE-C073B7EFD5F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09EE10F5-91A5-4C34-8FFE-C073B7EFD5F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09EE10F5-91A5-4C34-8FFE-C073B7EFD5F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
