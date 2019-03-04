@@ -18,21 +18,27 @@ namespace GPS.SimpleHelpers.Stopwatch.Tests
         {
             _log = log;
         }
-        
+
+        private async Task RandomDelay(int start, int end)
+        {
+                var random = new Random();
+                await Task.Delay((int)(random.NextDouble() * (double)random.Next(start, end)));
+        }
 
         [Fact]
-        public void TimeActionTest()
+        public async Task TimeActionTest()
         {
-            var result = StopwatchHelpers.TimeAction<int, bool>(10, value =>
+            var result = await StopwatchHelpers.TimeAction<object, object>(null, async value =>
             {
-                return value == 10;
+                await RandomDelay(15, 150);
+                return value;
             },
             elapsed =>
             {
                 _log.WriteLine($"{elapsed} ms");
             });
 
-            Assert.True(result);
+            Assert.Null(result);
         }
 
         [Fact]
@@ -102,9 +108,9 @@ namespace GPS.SimpleHelpers.Stopwatch.Tests
         [Fact]
         public void TimeActionTest3()
         {
-            for(int i = 0; i < 10; ++i)
+            for (int i = 0; i < 10; ++i)
             {
-                Assert.NotEqual(0, StopwatchHelpers.TimeAction(i, j => 
+                Assert.NotEqual(0, StopwatchHelpers.TimeAction(i, j =>
                     { for (int k = 0; k < Math.Pow(2, j + 16); ++k) ; }));
             }
         }
