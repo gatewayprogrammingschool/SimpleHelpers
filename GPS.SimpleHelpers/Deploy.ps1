@@ -1,37 +1,41 @@
-function Deploy-Package
+function Push-Package
 {
     param(
-        [Parameter(Mandatory=$true)][string]$SolutionDir,
-        [Parameter(Mandatory=$true)][string]$BuildDir,
-        [Parameter(Mandatory=$true)][string]$Namespace,
-        [Parameter(Mandatory=$true)][string]$Assembly
-    )	
+        [Parameter(Mandatory=$true)][string]$SolutionDirectory,
+        [Parameter(Mandatory=$false)][string]$Config = "Debug",
+        [Parameter(Mandatory=$false)][string]$Repository = "http://localhost:81/nuget/GPS",
+        [Parameter(Mandatory=$false)][string]$ApiKey = $env:LocalhostNugetAPIKey
+    )
 
-    $proj = $SolutionDir + '\' + $Namespace + '\' + $Namespace + '.csproj'
-	$assm = $BuildDir + '\' + $Assembly
+    #$SolutionName = (Get-ChildItem $SolutionDirectory"/*.sln" | Get-Item).Name
 
-&    "F:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\amd64\msbuild.exe" $proj /p:Configuration=Release
+    $OutputPath = [System.IO.Path]::Combine($SolutionDirectory, "Outbound")
+    $ProjectPath = [System.IO.Path]::Combine($SolutionDirectory, "GPS.SimpleHelpers", "GPS.SimpleHelpers.csproj")
+    $NuSpecPath = [System.IO.Path]::Combine($SolutionDirectory, "GPS.SimpleHelpers", "GPS.SimpleHelpers.nuspec")
+
+    Write-Host $OutputPath
+
+    Get-Item $OutputPath -ErrorAction Stop | Remove-Item -Force -Recurse
+    New-Item -Path $SolutionDirectory -Name "Outbound" -ItemType "directory"
+
+    dotnet build $SolutionDirectory -c $Config
+
+    Write-Host $ProjectPath
+
+    nuget pack $NuSpecPath -OutputDirectory $OutputPath -Properties Configuration=$Config
 
 	if($LASTEXITCODE -eq 0) {
+        $Packages = Get-Item $OutputPath -ErrorAction Stop | Get-ChildItem
 
-
-		$AssemblyVersion = 
-			[Diagnostics.FileVersionInfo]::GetVersionInfo($assm).FileVersion
-    
-		$packageName = $Namespace +'.' +$AssemblyVersion+'.nupkg'
-		$package = $BuildDir +'\' +$packageName
-		$destination = $BuildDir + '\' + $packageName + "\" + $packageName
-		$sourceDestination = $BuildDir + '\' + $packageName + "\" + $Namespace +'.' +$AssemblyVersion+'.symbols.nupkg'
-		Set-Location $SolutionDir
-
-		$releaseNotes = [IO.File]::ReadAllText($SolutionDir + "\ReleaseNotes.txt")
-
-		#packages\Paket\tools\paket.exe pack --release-notes $releaseNotes --symbols -v $package
-		#Paket-Push -File $destination -ApiKey $env:NugetAPIKey -url https://www.nuget.org -endpoint /api/v2/package -Verbose
+        $Packages | ForEach-Object -Process {
+            $Command = "dotnet nuget push " + $_.FullName + " -s " + $Repository + " -k " + $ApiKey
+            # Write-Host $Command
+            Invoke-Expression $Command
+        }
 	}
 }
 
 Clear-Host
 
 #Deploy-Package -SolutionDir %1 -BuildDir %2 -Namespace %3 -Assembly %4
-Deploy-Package -SolutionDir 'F:\GPS\SimpleHelpers\GPS.SimpleHelpers' -BuildDir 'F:\GPS\SimpleHelpers\GPS.SimpleHelpers\GPS.SimpleHelpers\bin\Release' -Namespace "GPS.SimpleHelpers" -Assembly "GPS.SimpleHelpers.dll"
+Push-Package -SolutionDir 'C:\GitHub\SimpleHelpers\GPS.SimpleHelpers' -Repository "http://source.marcumllp.com:81/nuget/Default" -ApiKey "pbyrd:pbyrd"
