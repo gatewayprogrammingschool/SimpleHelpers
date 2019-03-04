@@ -18,7 +18,7 @@ function Push-Package
     Get-Item $OutputPath -ErrorAction Stop | Remove-Item -Force -Recurse
     New-Item -Path $SolutionDirectory -Name "Outbound" -ItemType "directory"
 
-    dotnet build $SolutionDirectory -c $Config
+    # dotnet build $SolutionDirectory -c $Config
 
     Write-Host $ProjectPath
 

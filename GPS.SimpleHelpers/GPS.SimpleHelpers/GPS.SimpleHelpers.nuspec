@@ -2,13 +2,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>GPS.SimpleHelpers</id>
-    <version>1.5.0</version>
+    <version>1.5.3</version>
     <title>GPS Simple Helpers</title>
     <authors>The Sharp Ninja (ninja@thesharp.ninja)</authors>
     <owners>Gateway Programming School, Inc.</owners>
-    <description>Library of helper objects such as safely 
+    <description>Library of helper objects such as safely
     marshalling objects, safely calling methods, and
-    Stopwatch enhancements such as pinning moments 
+    Stopwatch enhancements such as pinning moments
     later recall.</description>
     <projectUrl>https://github.com/gatewayprogrammingschool/simplehelpers</projectUrl>
     <license type="expression">MIT</license>
@@ -18,11 +18,11 @@
     </dependencies>
   </metadata>
   <files>
+    <file src="bin\$configuration$\netstandard2.0\GPS.SimpleHelpers.dll" target="lib\netstandard2.0" />
+    <file src="bin\$configuration$\netstandard2.0\GPS.SimpleHelpers.pdb" target="lib\netstandard2.0" />
     <file src="bin\$configuration$\net461\GPS.SimpleHelpers.dll" target="lib\net461" />
     <file src="bin\$configuration$\net461\GPS.SimpleHelpers.pdb" target="lib\net461" />
     <file src="bin\$configuration$\net472\GPS.SimpleHelpers.dll" target="lib\net472" />
     <file src="bin\$configuration$\net472\GPS.SimpleHelpers.pdb" target="lib\net472" />
-    <file src="bin\$configuration$\netstandard2.0\GPS.SimpleHelpers.dll" target="lib\netstandard2.0" />
-    <file src="bin\$configuration$\netstandard2.0\GPS.SimpleHelpers.pdb" target="lib\netstandard2.0" />
   </files>
 </package>

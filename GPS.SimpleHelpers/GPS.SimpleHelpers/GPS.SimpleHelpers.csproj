@@ -1,17 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net472;net461</TargetFrameworks>
-    <Version>1.5.0</Version>
-    <AssemblyVersion>1.5.0</AssemblyVersion>
+    <TargetFrameworks>netstandard2.0;net461;net472</TargetFrameworks>
+    <Version>1.5.3</Version>
+    <AssemblyVersion>1.5.3</AssemblyVersion>
     <RootNamespace>GPS.SimpleHelpers</RootNamespace>
     <AssemblyName>GPS.SimpleHelpers</AssemblyName>
     <AssemblyTitle>GPS Simple Helpers</AssemblyTitle>
-    <Description>Library of helper objects such as safely 
+    <Description>Library of helper objects such as safely
     marshalling objects, safely calling methods, and
-    Stopwatch enhancements such as pinning moments 
+    Stopwatch enhancements such as pinning moments
     later recall.</Description>
     <Copyright>Copyright © Gateway Programming School, Inc. 2017 - 2019</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PasswordProtectedKey.pfx</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
+
 
   <ItemGroup>
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />

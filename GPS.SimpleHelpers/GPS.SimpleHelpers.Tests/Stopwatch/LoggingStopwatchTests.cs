@@ -24,11 +24,11 @@ namespace GPS.SimpleHelpers.Stopwatch.Tests
         {
             var lsw = new LoggingStopwatch();
 
-            var output = lsw.Mark<LoggingStopwatch, long>("first", 
+            var output = lsw.Mark<LoggingStopwatch, long>("first",
             (sw) =>
             {
-                var start = sw.ElapsedAt("first");
-                _log.WriteLine(start.ToString("N4"));
+                var start = sw.ElapsedAt("first_Begin");
+                _log.WriteLine(start.ToString());
 
                 Assert.Equal(0.0, start);
 
@@ -46,8 +46,8 @@ namespace GPS.SimpleHelpers.Stopwatch.Tests
             long markElapsed = lsw.Mark("second");
             long difference = lsw.Difference("first", "second");
 
-            _log.WriteLine($"Mark At: {markElapsed:N4}");
-            _log.WriteLine($"Difference: {difference:N4}");
+            _log.WriteLine($"Mark At: {markElapsed}");
+            _log.WriteLine($"Difference: {difference}");
 
             Assert.NotEqual(0.0, markElapsed);
             Assert.NotEqual(0.0, difference);
@@ -65,7 +65,7 @@ namespace GPS.SimpleHelpers.Stopwatch.Tests
             await Task.Delay((int)(random.NextDouble() * (double)random.Next(15, 150)));
             var third = lsw.Mark("third");
 
-            var marks = lsw.Marks;
+            var marks = lsw.ElapsedMarks;
 
             _log.WriteLine($"Marks: {string.Join(", ", marks)}");
 

@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-paket.dependencies = paket.dependencies
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPS.SimpleHelpers", "GPS.SimpleHelpers\GPS.SimpleHelpers.csproj", "{35EE4C3E-AD2D-4078-8408-632720FD7BDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPS.SimpleHelpers", "GPS.SimpleHelpers\GPS.SimpleHelpers.csproj", "{35EE4C3E-AD2D-4078-8408-632720FD7BDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3EA397B9-4E4A-461A-BBD8-59E92558F957}"
 	ProjectSection(SolutionItems) = preProject
 		Deploy.ps1 = Deploy.ps1
+		GPS.SimpleHelpers\PasswordProtectedKey.pfx = GPS.SimpleHelpers\PasswordProtectedKey.pfx
 		ReleaseNotes.txt = ReleaseNotes.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GPS.SimpleHelpers.Tests", "GPS.SimpleHelpers.Tests\GPS.SimpleHelpers.Tests.csproj", "{09EE10F5-91A5-4C34-8FFE-C073B7EFD5F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPS.SimpleHelpers.Tests", "GPS.SimpleHelpers.Tests\GPS.SimpleHelpers.Tests.csproj", "{09EE10F5-91A5-4C34-8FFE-C073B7EFD5F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,5 +31,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEE85C47-3365-4E27-A13D-6B5956A37B30}
 	EndGlobalSection
 EndGlobal
