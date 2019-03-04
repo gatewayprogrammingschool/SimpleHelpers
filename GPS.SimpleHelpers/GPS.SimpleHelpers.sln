@@ -8,7 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3EA397B9-4E4A-461A-BBD8-59E92558F957}"
 	ProjectSection(SolutionItems) = preProject
 		Deploy.ps1 = Deploy.ps1
-		GPS.SimpleHelpers\PasswordProtectedKey.pfx = GPS.SimpleHelpers\PasswordProtectedKey.pfx
 		ReleaseNotes.txt = ReleaseNotes.txt
 	EndProjectSection
 EndProject

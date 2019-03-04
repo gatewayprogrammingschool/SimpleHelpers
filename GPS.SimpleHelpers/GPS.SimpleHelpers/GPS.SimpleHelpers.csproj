@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461;net472</TargetFrameworks>
-    <Version>1.5.3</Version>
-    <AssemblyVersion>1.5.3</AssemblyVersion>
+    <Version>1.5.4</Version>
+    <AssemblyVersion>1.5.4</AssemblyVersion>
     <RootNamespace>GPS.SimpleHelpers</RootNamespace>
     <AssemblyName>GPS.SimpleHelpers</AssemblyName>
     <AssemblyTitle>GPS Simple Helpers</AssemblyTitle>
@@ -12,8 +12,7 @@
     later recall.</Description>
     <Copyright>Copyright © Gateway Programming School, Inc. 2017 - 2019</Copyright>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>PasswordProtectedKey.pfx</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>GPS.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
 

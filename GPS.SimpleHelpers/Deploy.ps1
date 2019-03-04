@@ -15,7 +15,7 @@ function Push-Package
 
     Write-Host $OutputPath
 
-    Get-Item $OutputPath -ErrorAction Stop | Remove-Item -Force -Recurse
+    Get-Item $OutputPath -ErrorAction SilentlyContinue | Remove-Item -Force -Recurse
     New-Item -Path $SolutionDirectory -Name "Outbound" -ItemType "directory"
 
     # dotnet build $SolutionDirectory -c $Config
@@ -38,4 +38,4 @@ function Push-Package
 Clear-Host
 
 #Deploy-Package -SolutionDir %1 -BuildDir %2 -Namespace %3 -Assembly %4
-Push-Package -SolutionDir 'C:\GitHub\SimpleHelpers\GPS.SimpleHelpers' -Repository "http://source.marcumllp.com:81/nuget/Default" -ApiKey "pbyrd:pbyrd"
+Push-Package -SolutionDir 'd:\GitHub\SimpleHelpers\GPS.SimpleHelpers' -Repository "http://source.marcumllp.com:81/nuget/Default" -ApiKey "pbyrd:pbyrd"

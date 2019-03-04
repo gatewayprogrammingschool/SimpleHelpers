@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>GPS.SimpleHelpers</id>
-    <version>1.5.3</version>
+    <version>1.5.4</version>
     <title>GPS Simple Helpers</title>
     <authors>The Sharp Ninja (ninja@thesharp.ninja)</authors>
     <owners>Gateway Programming School, Inc.</owners>
