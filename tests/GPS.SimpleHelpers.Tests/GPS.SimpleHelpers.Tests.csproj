@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GPS.SimpleHelpers\GPS.SimpleHelpers.csproj" />
+    <ProjectReference Include="..\src\GPS.SimpleHelpers.csproj" />
   </ItemGroup>
 
 </Project>

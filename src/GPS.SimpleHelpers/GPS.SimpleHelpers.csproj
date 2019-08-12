@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <Version>1.5.4</Version>
+    <AssemblyVersion>1.5.4</AssemblyVersion>
+    <RootNamespace>GPS.SimpleHelpers</RootNamespace>
+    <AssemblyName>GPS.SimpleHelpers</AssemblyName>
+    <AssemblyTitle>GPS Simple Helpers</AssemblyTitle>
+    <Description>Library of helper objects such as safely
+    marshalling objects, safely calling methods, and
+    Stopwatch enhancements such as pinning moments
+    later recall.</Description>
+    <Copyright>Copyright © Gateway Programming School, Inc. 2017 - 2019</Copyright>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>GPS.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+</Project>
